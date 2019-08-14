@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Intuiko_ConnectedStore>
+			<version>1.0.0</version>
+		</Intuiko_ConnectedStore>
+	</modules>
+
+	<frontend>
+		<routers>
+			<ping>
+				<use>standard</use>
+				<args>
+					<module>Intuiko_ConnectedStore</module>
+					<frontName>ping</frontName>
+				</args>
+			</ping>
+		</routers>
+		
+		<events>
+			<checkout_cart_save_after>
+				<observers> 
+					<onSaveCart>
+						<type>singleton</type>
+						<class>Intuiko_ConnectedStore_Model_Observer</class>
+						<method>onSaveCart</method>
+					</onSaveCart>
+				</observers>
+			</checkout_cart_save_after>
+			
+			<checkout_submit_all_after>
+				<observers> 
+					<onSaveOrder>
+						<type>singleton</type>
+						<class>Intuiko_ConnectedStore_Model_Observer</class>
+						<method>onSaveOrder</method>
+					</onSaveOrder>
+				</observers>
+			</checkout_submit_all_after>
+			
+			<wishlist_items_renewed>
+				<observers> 
+					<onSaveWishlist>
+						<type>singleton</type>
+						<class>Intuiko_ConnectedStore_Model_Observer</class>
+						<method>onSaveWishlist</method>
+					</onSaveWishlist>
+				</observers>
+			</wishlist_items_renewed>
+			
+			<customer_login>
+				<observers>
+					<onLogin>
+						<type>singleton</type>
+						<class>Intuiko_ConnectedStore_Model_Observer</class>
+						<method>onLogin</method>
+					</onLogin>
+				</observers>
+			</customer_login>
+			
+			<customer_logout>
+				<observers> 
+					<onLogout>
+						<type>singleton</type>
+						<class>Intuiko_ConnectedStore_Model_Observer</class>
+						<method>onLogout</method>
+					</onLogout>
+				</observers>
+			</customer_logout>
+			
+			<customer_save_after>
+				<observers> 
+					<onCustomerSaveAfter>
+						<type>singleton</type>
+						<class>Intuiko_ConnectedStore_Model_Observer</class>
+						<method>onCustomerSaveAfter</method>
+					</onCustomerSaveAfter>
+				</observers>
+			</customer_save_after>
+			
+			<controller_action_predispatch>
+				<observers>
+					<synchroCart>
+						<type>singleton</type>
+						<class>Intuiko_ConnectedStore_Model_Observer</class>
+						<method>synchroBag</method>
+					</synchroCart>
+				</observers>
+			</controller_action_predispatch> 
+			
+			 
+			<controller_action_layout_generate_blocks_after>
+				<observers>
+					<synchroCart>
+						<type>singleton</type>
+						<class>Intuiko_ConnectedStore_Model_Observer</class>
+						<method>resetFlagSynchro</method>
+					</synchroCart>
+				</observers>
+			</controller_action_layout_generate_blocks_after>
+			
+		</events>
+			
+	</frontend>
+
+	<global>
+	
+		<helpers>
+			<connectedstore>
+				<class>Intuiko_ConnectedStore_Helper</class>
+			</connectedstore>
+		</helpers>
+		
+		<models>
+			<connectedstore>
+				<class>Intuiko_ConnectedStore_Model</class>
+			</connectedstore>
+		</models>
+		
+		<blocks>
+			<connectedstore>
+				<class>Intuiko_ConnectedStore_Block</class>
+			</connectedstore>
+		</blocks>
+		
+	</global>
+	
+	<default>
+        <connectedstore_section>
+            <connectedstore_group>
+                <timeout_field>5000</timeout_field>
+            </connectedstore_group>
+        </connectedstore_section>
+    </default>
+    
+</config>
