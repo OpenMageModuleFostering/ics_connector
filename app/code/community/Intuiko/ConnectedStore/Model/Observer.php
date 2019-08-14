@@ -5,7 +5,7 @@ include_once 'Cart.php';
 include_once 'Wishlist.php';
 include_once 'Order.php';
 include_once 'Messages.php';
-include_once 'app/code/local/Intuiko/ConnectedStore/Logger/ICSLogger.php';
+include_once(__DIR__ . "../Logger/ICSLogger.php");
 
 class Intuiko_ConnectedStore_Model_Observer extends Varien_Event_Observer {
 
