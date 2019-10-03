@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/ICS_Connector",
+    "name": "OpenMageModuleFostering\/ICS_Connector",
     "type": "magento-module",
     "license": "MPL",
     "homepage": "",
     "description": "The Magento Connector developed alongside Intuiko for Connected Store is a two-way connector.",
     "authors": [
-    {
-        "name": "Intuiko",
-        "email": "support.ics@intuiko.com"
-    }
-],
+        {
+            "name": "Intuiko",
+            "email": "support.ics@intuiko.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
