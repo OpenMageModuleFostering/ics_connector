@@ -1,3 +1,5 @@
+
+
 ## Original Package Description
 
 The Magento Connector developed alongside Intuiko for Connected Store is a two-way connector.

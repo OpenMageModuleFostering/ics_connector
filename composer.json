@@ -1,5 +1,5 @@
 {
-    "name": "OpenMageModuleFostering\/ICS_Connector",
+    "name": "openmage-module-fostering\/ics_connector",
     "type": "magento-module",
     "license": "MPL",
     "homepage": "",
